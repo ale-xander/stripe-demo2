@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <title>Thank You For Shopping With Us</title>
+</head>
+
+<body>
+
+    <section style="padding: 1em;">
+        <h3>Your order is on it's way!</h3>
+        <h5>We will ship your overpriced backpack today. This is your Stripe charge ID: <mark id="ch_id"></mark>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('id');
+        const ch_id = document.getElementById('ch_id');
+
+        fetch('/retrieve-session?id=' + sessionId)
+            .then((response) => response.json())
+            .then((session) => {
+                ch_id.innerHTML = session.payment_intent.charges.data[0].id
+                console.log(session)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    </script>
+    
+</body>
+
+</html>

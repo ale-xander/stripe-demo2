@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Overpriced Backpacks</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Overpriced Backpacks</h1>
+            <p style="padding: 1em;">Lorem cred venmo artisan, kickstarter woke paleo blog tumblr. Jean shorts wayfarers roof party beard locavore austin, taxidermy direct trade tbh neutra letterpress venmo. Live-edge four loko chartreuse keffiyeh paleo hexagon poke bushwick authentic tofu. Sustainable portland flexitarian craft beer crucifix lyft mlkshk farm-to-table wayfarers pinterest fanny pack cray microdosing hashtagtwee.</p>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div>
+                                <img class="rounded mx-auto d-block"
+                                    src="https://res.cloudinary.com/ale-xander/image/upload/c_scale,w_250/v1581716138/stripe/teal_wgc98b.png"
+                                    alt="" />
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">FÖRSLAG</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" disabled>
+                                                Out Of Stock
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div>
+                                <img class="rounded mx-auto d-block"
+                                    src="https://res.cloudinary.com/ale-xander/image/upload/c_scale,w_250/v1581716138/stripe/red_q08nrl.png"
+                                    alt="" />
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">BLÅMES</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" disabled>
+                                                Out Of Stock
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="rounded mx-auto d-block"
+                                src="https://res.cloudinary.com/ale-xander/image/upload/c_scale,w_250/v1581716138/stripe/yellow_qsko2a.png"
+                                alt="" />
+                            <div class="card-body">
+                                <p class="card-text">KOKOSNÖT</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-info"
+                                            data-toggle="modal" data-target="#shoppingCart3">
+                                            Add To Cart
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="shoppingCart3" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title" id="exampleModalLabel">
+                                                            SHOPPING CART
+                                                        </h3>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5>KOKOSNÖT backpack</h5>
+                                                        <div>
+                                                            <img class="rounded mx-auto d-block"
+                                                                src="https://res.cloudinary.com/ale-xander/image/upload/c_scale,w_250/v1581716138/stripe/yellow_qsko2a.png"
+                                                                alt="" />
+                                                        </div>
+                                                        <section>
+                                                            Price: $99.99
+                                                        </section>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">
+                                                            Remove Item From Cart
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            id="checkout-button">
+                                                            Buy
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const stripe = Stripe('pk_test_pDYBOwS8VnEOd8flZlHcLv9z00FHHDeQP8');
+        const button = document.getElementById('checkout-button');
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('clicked on buy')
+            fetch('/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    amount: '9999',
+                    
+                }),
+            })
+                .then((response) => response.json())
+                .then((session) => {
+                    stripe.redirectToCheckout({
+                        sessionId: session.id
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
